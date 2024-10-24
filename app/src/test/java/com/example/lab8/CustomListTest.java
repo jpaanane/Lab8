@@ -61,7 +61,20 @@ public class CustomListTest {
         list.deleteCity(city);
         assertEquals(0, list.getCount());
     }
-
+    /**
+     * Gets the starting list size, then adds four new cities
+     * calls function and compares sizes of return to list+4
+     */
+    @Test
+    public void countCitiesTest(){
+        list = MockCityList();
+        int prior = list.getCount();
+        list.addCity(new City("Edmonton", "AB"));
+        list.addCity(new City("Nova Scotia", "AB"));
+        list.addCity(new City("Calgary", "AB"));
+        list.addCity(new City("Leduc", "AB"));
+        assertEquals(prior + 4, list.countCity());
+    }
 
 
 }
